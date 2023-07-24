@@ -58,7 +58,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        Debug.Log("Token!");
+        if (other.gameObject.CompareTag("Token"))
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
