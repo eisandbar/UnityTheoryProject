@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemyPrefabs = new GameObject[2];
     public GameObject tokenPrefab;
     public GameObject gameOverScreen;
+
+    // ENCAPSULATION
     public int level { get; private set; }
     private float bound = 8;
 
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     private void Spawn(int count)
     {
         for (int i = 0; i<count; i++)
@@ -51,11 +54,13 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
 
+    // ABSTRACTION
     private Vector3 GetRandomPos()
     {
         return new Vector3(Random.Range(-bound, bound), 0, Random.Range(-bound, bound));
     }
 
+    // ABSTRACTION
     private void SpawnOne(GameObject prefab)
     {
         Instantiate(prefab, GetRandomPos(), prefab.transform.rotation);
