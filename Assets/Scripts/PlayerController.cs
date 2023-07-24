@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // ENCAPSULATION
     public Vector3 position { get; private set; }
     private float speed = 25;
     private float bound = 8;
@@ -28,11 +29,13 @@ public class PlayerController : MonoBehaviour
         position = transform.position;
     }
 
+    // ABSTRACTION
     private void Move(Vector3 direction, float input)
     {
         transform.Translate(direction * input * Time.deltaTime * speed);
     }
 
+    // ABSTRACTION
     private void BoundMovement()
     {
         float x = transform.position.x;
